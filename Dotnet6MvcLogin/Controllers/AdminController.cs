@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dotnet6MvcLogin.Controllers
+namespace SistemaBiblioteca.Controllers
 {
     [Authorize(Roles ="admin")]
     public class AdminController : Controller

@@ -1,0 +1,38 @@
+﻿@model SistemaBiblioteca.Models.Domain.ApplicationUser
+
+<h1 class="text-center text-2xl font-semibold">Eliminar Libro</h1>
+
+<h3 class="text-xl">¿Está seguro de eliminar este libro?</h3>
+<div>
+        <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Regresar</a>
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="px-3 py-2 bg-red-500 rounded-xl text-white" />
+    </form>
+</div>

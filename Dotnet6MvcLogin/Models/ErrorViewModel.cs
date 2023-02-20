@@ -1,4 +1,4 @@
-namespace Dotnet6MvcLogin.Models
+namespace SistemaBiblioteca.Models
 {
     public class ErrorViewModel
     {

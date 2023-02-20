@@ -1,12 +1,12 @@
-﻿using Dotnet6MvcLogin.Models;
-using Dotnet6MvcLogin.Models.Domain;
-using Dotnet6MvcLogin.Models.DTO;
-using Dotnet6MvcLogin.Repositories.Abstract;
+﻿using SistemaBiblioteca.Models;
+using SistemaBiblioteca.Models.Domain;
+using SistemaBiblioteca.Models.DTO;
+using SistemaBiblioteca.Services;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Text;
 
-namespace Dotnet6MvcLogin.Repositories.Implementation
+namespace SistemaBiblioteca.Repositories.Implementation
 {
     public class UserAuthenticationService: IUserAuthenticationService
     {

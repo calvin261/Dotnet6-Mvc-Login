@@ -1,0 +1,35 @@
+﻿@model SistemaBiblioteca.Models.Domain.ApplicationUser
+
+<div>
+    <h1 class="text-center text-2xl font-semibold">Ver Usuario</h1>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+</div>
+<div class="flex w-full mt-2 justify-start">
+    <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Regresar</a>
+    <a class="px-3 py-2 bg-blue-500 rounded-xl ml-5 text-white" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+</div>

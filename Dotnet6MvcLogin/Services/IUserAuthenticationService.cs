@@ -1,10 +1,10 @@
-﻿using Dotnet6MvcLogin.Models.DTO;
+﻿using SistemaBiblioteca.Models.DTO;
 
-namespace Dotnet6MvcLogin.Repositories.Abstract
+namespace SistemaBiblioteca.Services
 {
     public interface IUserAuthenticationService
     {
-   
+
         Task<Status> LoginAsync(LoginModel model);
         Task LogoutAsync();
         Task<Status> RegisterAsync(RegistrationModel model);

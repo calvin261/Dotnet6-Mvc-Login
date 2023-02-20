@@ -1,9 +1,8 @@
-﻿using Dotnet6MvcLogin.Models.Domain;
-using Dotnet6MvcLogin.Repositories.Abstract;
+﻿using SistemaBiblioteca.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Dotnet6MvcLogin.Repositories.Implementation
+namespace SistemaBiblioteca.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
@@ -20,7 +19,7 @@ namespace Dotnet6MvcLogin.Repositories.Implementation
                 ctx.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -54,7 +53,7 @@ namespace Dotnet6MvcLogin.Repositories.Implementation
         }
         public T? FindById(int id)
         {
-           return ctx.Set<T>().Find(id);
+            return ctx.Set<T>().Find(id);
         }
 
         public IQueryable<T> GetAll()
@@ -68,7 +67,7 @@ namespace Dotnet6MvcLogin.Repositories.Implementation
 
         }
 
-       
+
     }
 
 }

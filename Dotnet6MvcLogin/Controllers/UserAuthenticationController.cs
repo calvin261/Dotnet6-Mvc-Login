@@ -1,9 +1,9 @@
-﻿using Dotnet6MvcLogin.Models.DTO;
-using Dotnet6MvcLogin.Repositories.Abstract;
+﻿using SistemaBiblioteca.Models.DTO;
+using SistemaBiblioteca.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dotnet6MvcLogin.Controllers
+namespace SistemaBiblioteca.Controllers
 {
     public class UserAuthenticationController : Controller
     {
@@ -59,20 +59,20 @@ namespace Dotnet6MvcLogin.Controllers
             return RedirectToAction(nameof(Login));
         }
         //[AllowAnonymous]
-        //public async Task<IActionResult> RegisterAdmin()
-        //{
-        //    RegistrationModel model = new RegistrationModel
-        //    {
-        //        Username="admin",
-        //        Email="admin@gmail.com",
-        //        FirstName="John",
-        //        LastName="Doe",
-        //        Password="Admin@12345#"
-        //    };
-        //    model.Role = "admin";
-        //    var result = await this._authService.RegisterAsync(model);
-        //    return Ok(result);
-        //}
+        public async Task<IActionResult> RegisterAdmin()
+        {
+            RegistrationModel model = new RegistrationModel
+            {
+                Username = "admin",
+                Email = "admin@gmail.com",
+                FirstName = "John",
+                LastName = "Doe",
+                Password = "Admin@12345#"
+            };
+            model.Role = "admin";
+            var result = await this._authService.RegisterAsync(model);
+            return Ok(result);
+        }
 
         [Authorize]
         public IActionResult ChangePassword()

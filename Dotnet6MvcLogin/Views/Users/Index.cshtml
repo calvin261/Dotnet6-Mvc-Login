@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SistemaBiblioteca.Models.Domain.ApplicationUser>
+<h1 class="text-center text-2xl font-semibold">Lista de Usuarios</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Nombre
+            </th>
+            <th>
+              Apellido
+            </th>
+            <th>
+               Correo Electrónico
+            </th>
+            <th>
+               Nombre de Usuario
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                <td>
+                    <a class="px-2 py-2 text-blue-500" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a class="px-2 py-2 text-blue-500" asp-action="Details" asp-route-id="@item.Id">Ver Usuario</a> |
+                        <a class="px-2 py-2 text-red-500" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

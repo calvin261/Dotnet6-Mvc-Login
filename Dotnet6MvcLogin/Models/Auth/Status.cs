@@ -1,4 +1,4 @@
-﻿namespace Dotnet6MvcLogin.Models.DTO
+﻿namespace SistemaBiblioteca.Models.DTO
 {
     public class Status
     {

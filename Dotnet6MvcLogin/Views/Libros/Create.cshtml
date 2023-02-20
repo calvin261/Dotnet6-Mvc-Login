@@ -1,0 +1,59 @@
+﻿@model SistemaBiblioteca.Models.Libro
+
+
+<h1 class="text-center text-2xl font-semibold">Crear Libro</h1>
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="flex w-full justify-center">
+        <div class="form-group w-full">
+            <label asp-for="Autor" class="control-label"></label>
+            <input asp-for="Autor" class="form-control" />
+            <span asp-validation-for="Autor" class="text-danger"></span>
+        </div>
+        <div class="form-group ml-3 w-full">
+            <label asp-for="Titulo" class="control-label"></label>
+            <input asp-for="Titulo" class="form-control" />
+            <span asp-validation-for="Titulo" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="flex w-full">
+        <div class="form-group w-full">
+            <label asp-for="Materia" class="control-label"></label>
+            <input asp-for="Materia" class="form-control" />
+            <span asp-validation-for="Materia" class="text-danger"></span>
+        </div>
+        <div class="form-group ml-3 w-full">
+            <label asp-for="Estado" class="control-label"></label>
+            <input asp-for="Estado" class="form-control" />
+            <span asp-validation-for="Estado" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="flex w-full">
+        <div class="form-group w-full">
+            <label asp-for="TipoLibro" class="control-label"></label>
+            <input asp-for="TipoLibro" class="form-control" />
+            <span asp-validation-for="TipoLibro" class="text-danger"></span>
+        </div>
+        <div class="form-group ml-3 w-full">
+            <label asp-for="CategoriaEdad" class="control-label"></label>
+            <input asp-for="CategoriaEdad" class="form-control" />
+            <span asp-validation-for="CategoriaEdad" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="flex w-full mt-2 justify-between">
+        <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Cancelar</a>
+        <div class="form-group">
+           
+            <input type="submit" value="Crear" class="px-3 py-2 bg-blue-500 rounded-xl text-white" />
+        </div>
+    </div>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

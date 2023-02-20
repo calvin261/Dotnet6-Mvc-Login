@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Dotnet6MvcLogin": {
+    "SistemaBiblioteca": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

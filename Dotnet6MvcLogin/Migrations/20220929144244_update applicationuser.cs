@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Dotnet6MvcLogin.Migrations
+namespace SistemaBiblioteca.Migrations
 {
     public partial class updateapplicationuser : Migration
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Dotnet6MvcLogin.Models.Domain
+namespace SistemaBiblioteca.Models.Domain
 {
     public class ApplicationUser:IdentityUser
     {

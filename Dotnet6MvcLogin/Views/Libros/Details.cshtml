@@ -1,0 +1,54 @@
+﻿@model SistemaBiblioteca.Models.Libro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h1 class="text-center text-2xl font-semibold">Ver Libro</h1>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Materia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Materia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoLibro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoLibro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoriaEdad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategoriaEdad)
+        </dd>
+    </dl>
+</div>
+<div class="flex w-full mt-2 justify-start">
+    <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Regresar</a>
+    @if (User.IsInRole("admin"))
+    {
+        <a class="px-3 py-2 bg-blue-500 rounded-xl ml-5 text-white" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    }
+</div>

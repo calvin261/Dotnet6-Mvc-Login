@@ -1,86 +1,88 @@
-﻿@model Dotnet6MvcLogin.Models.DTO.LoginModel
+﻿@model SistemaBiblioteca.Models.DTO.LoginModel
 @{
     Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>login</title>
-        
-<style>
-
-form {
-  border: 3px solid #f1f1f1;
-  width:60%;
-  margin:auto;
-  margin-top:10%;
-}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #aa048b;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-.container {
-  padding: 16px;
-}
-
-.msg{
-  padding: 0px;
-}
-
-
-.err{
-    color:red;
-}
-</style>
- 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script defer src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-	
-<form asp-action="Login" method="post">
-  
-  <div class="container">
-    <label asp-for="Username"><b>Username</b></label>
-    <input type="text" asp-for="Username" placeholder="Enter Username">
-            <div class="msg">
-            <span class="err" asp-validation-for="Username"></span>
+    <div class="row my-5">
+        <div class="col-md-3 offset-md-5">
+            <div class="flex justify-center my-2">
+                <img src="http://www.forosecuador.ec/imgfe/sello-uce-logotipo-universidad-central-ecuador-1.png" class="w-1/3 " alt="Logo" />
             </div>
+            <div class="card login-logout-tab">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/UserAuthentication/Login">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/UserAuthentication/Registration">Registrarse</a>
+                        </li>
 
-            
+                    </ul>
+                </div>
+              
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8 offset-md-2">
 
-    <label asp-for="Password"><b>Password</b></label>
-   <input  type="password" asp-for="Password" placeholder="Enter Password">
-            <div class="msg">
-            <span asp-validation-for="Password" class="err"></span>
+                                <section>
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fas fa-user-circle fa-9x text-secondary"></i>
+                                    </div>
+
+                                    <form asp-action="Login" method="post">
+                                        @if (TempData["msg"] != null)
+                                        {
+                                            <div class="msg">@TempData["msg"]</div>
+                                        }
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-floating my-3">
+                                            <input type="text" asp-for="Username" placeholder="Enter Username" class="form-control" autocomplete="username" aria-required="true">
+                                            <label asp-for="Username" class="form-label">Usuario</label>
+                                            <span asp-validation-for="Username" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input asp-for="Password" class="form-control" type="password" autocomplete="current-password" aria-required="true" />
+                                            <label asp-for="Password" class="form-label">Contraseña</label>
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                        <div>
+                                            <button id="login-submit" type="submit" class="w-100 bg-blue-500 px-3 mt-3 py-2 rounded-xl text-white">Ingresar</button>
+                                        </div>
+                                    </form>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </div>
 
-
-    @if(TempData["msg"]!=null){
-                <div class="msg">@TempData["msg"]</div>
-    }
-
-    <button type="submit">Login</button>
-    <a class="text-alert" href="/UserAuthentication/Registration">Not a user? Signup</a>
-  </div>
-</form>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
+    <script>
+        $(function () {
+            var current = location.pathname;
+            $('.nav-tabs li a').each(function () {
+                var $this = $(this);
+                if (current.indexOf($this.attr('href')) !== -1) {
+                    $this.addClass('active');
+                }
+            })
+        })
+    </script>
 </body>
 </html>

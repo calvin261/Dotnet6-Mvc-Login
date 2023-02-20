@@ -1,0 +1,60 @@
+﻿@model SistemaBiblioteca.Models.Libro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center text-2xl font-semibold">Consultar Libro</h1>
+
+<form asp-action="ConsultarLibro" method="get">
+    <div class="flex">
+        <input type="text" name="SearchString" />
+        <input type="submit" class="px-3 py-2 text-white bg-blue-500" value="Buscar" />
+    </div>
+</form>
+@*<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Materia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Materia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoLibro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoLibro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoriaEdad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategoriaEdad)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Regresar</a>
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="px-3 py-2 bg-red-500 rounded-xl text-white" />
+    </form>
+</div>
+*@

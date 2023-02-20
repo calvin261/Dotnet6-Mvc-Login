@@ -1,9 +1,11 @@
-﻿using Dotnet6MvcLogin.Models;
+﻿using SistemaBiblioteca.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
-namespace Dotnet6MvcLogin.Controllers
+namespace SistemaBiblioteca.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

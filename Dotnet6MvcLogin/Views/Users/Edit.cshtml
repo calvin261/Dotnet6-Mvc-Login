@@ -1,0 +1,51 @@
+﻿@model SistemaBiblioteca.Models.Domain.ApplicationUser
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<h1 class="text-center text-2xl font-semibold">Editar Usuario</h1>
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="flex w-full justify-center">
+        <div class="form-group w-full">
+            <label asp-for="FirstName" class="control-label">Nombre</label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group ml-3 w-full">
+            <label asp-for="LastName" class="control-label">Apellido</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="flex w-full">
+        <div class="form-group w-full">
+            <label asp-for="Email" class="control-label">Correo Electrónico</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group ml-3 w-full">
+            <label asp-for="UserName" class="control-label">Nombre de Usuario</label>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="flex w-full mt-2 justify-between">
+        <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Cancelar</a>
+        <div class="form-group">
+
+            <input type="submit" value="Actualizar" class="px-3 py-2 bg-blue-500 rounded-xl text-white" />
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Security.Principal;
 
-namespace Dotnet6MvcLogin.Repositories.Abstract
+namespace SistemaBiblioteca.Repositories
 {
     public interface IBaseRepository<T>
     {

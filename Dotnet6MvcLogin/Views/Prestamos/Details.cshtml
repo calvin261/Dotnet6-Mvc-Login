@@ -1,0 +1,41 @@
+﻿@model SistemaBiblioteca.Models.Prestamo
+
+<div>
+     <h1 class="text-center text-2xl font-semibold">Ver Prestamo</h1>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TiempoPrestamo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TiempoPrestamo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaPrestamo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaPrestamo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Libro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Libro.Titulo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.FirstName)    @Html.DisplayFor(model => model.User.LastName)
+        </dd>
+    </dl>
+</div>
+<div class="flex w-full mt-2 justify-start">
+    <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Regresar</a>
+    <a class="px-3 py-2 bg-blue-500 rounded-xl ml-5 text-white" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> 
+</div>

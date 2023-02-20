@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Dotnet6MvcLogin.Migrations
+namespace SistemaBiblioteca.Migrations
 {
     public partial class newone : Migration
     {

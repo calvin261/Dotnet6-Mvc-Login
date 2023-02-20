@@ -1,16 +1,21 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
-namespace Dotnet6MvcLogin.Models.Domain
+using SistemaBiblioteca.Models;
+namespace SistemaBiblioteca.Models.Domain
 {
     public class DatabaseContext : IdentityDbContext<ApplicationUser>
     {
+        public DatabaseContext()
+        {
+        }
+
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
 
         }
-       
 
+        public DbSet<Libro> Libro { get; set; }
+        public DbSet<Prestamo> Prestamo { get; set; }
 
     }
 }
