@@ -1,4 +1,4 @@
-﻿using SistemaBiblioteca.Models.DTO;
+﻿using SistemaBiblioteca.Models.Auth;
 
 namespace SistemaBiblioteca.Services
 {

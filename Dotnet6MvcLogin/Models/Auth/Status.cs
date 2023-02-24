@@ -1,4 +1,4 @@
-﻿namespace SistemaBiblioteca.Models.DTO
+﻿namespace SistemaBiblioteca.Models.Auth
 {
     public class Status
     {

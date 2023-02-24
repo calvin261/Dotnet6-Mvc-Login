@@ -41,13 +41,11 @@
             </div>
             <div class="flex w-full mt-2 justify-between">
                 <a class="px-3 py-2 bg-gray-500 rounded-xl text-white" asp-action="Index">Cancelar</a>
-                   @if (User.IsInRole("admin"))
-                    {
+
                 <div class="form-group">
 
                     <input type="submit" value="Actualizar" class="px-3 py-2 bg-blue-500 rounded-xl text-white" />
                 </div>
-                    }
             </div>
         </form>
 

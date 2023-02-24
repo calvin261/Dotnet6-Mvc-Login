@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SistemaBiblioteca.Models.DTO
+namespace SistemaBiblioteca.Models.Auth
 {
     public class LoginModel
     {

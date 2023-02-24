@@ -1,24 +1,23 @@
 ﻿using SistemaBiblioteca.Models;
 using SistemaBiblioteca.Models.Domain;
-using SistemaBiblioteca.Models.DTO;
-using SistemaBiblioteca.Services;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Text;
+using SistemaBiblioteca.Models.Auth;
 
-namespace SistemaBiblioteca.Repositories.Implementation
+namespace SistemaBiblioteca.Services
 {
-    public class UserAuthenticationService: IUserAuthenticationService
+    public class UserAuthenticationService : IUserAuthenticationService
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly SignInManager<ApplicationUser> signInManager;
-        public UserAuthenticationService(UserManager<ApplicationUser> userManager, 
+        public UserAuthenticationService(UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
-            this.signInManager = signInManager; 
+            this.signInManager = signInManager;
 
         }
 
@@ -38,9 +37,9 @@ namespace SistemaBiblioteca.Repositories.Implementation
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = model.Username,
                 FirstName = model.FirstName,
-                LastName=model.LastName,
-                EmailConfirmed=true,
-                PhoneNumberConfirmed=true,
+                LastName = model.LastName,
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
             };
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
@@ -52,7 +51,7 @@ namespace SistemaBiblioteca.Repositories.Implementation
 
             if (!await roleManager.RoleExistsAsync(model.Role))
                 await roleManager.CreateAsync(new IdentityRole(model.Role));
-            
+
 
             if (await roleManager.RoleExistsAsync(model.Role))
             {
@@ -109,20 +108,20 @@ namespace SistemaBiblioteca.Repositories.Implementation
                 status.StatusCode = 0;
                 status.Message = "Error on logging in";
             }
-           
+
             return status;
         }
 
         public async Task LogoutAsync()
         {
-           await signInManager.SignOutAsync();
-           
+            await signInManager.SignOutAsync();
+
         }
 
-        public async Task<Status> ChangePasswordAsync(ChangePasswordModel model,string username)
+        public async Task<Status> ChangePasswordAsync(ChangePasswordModel model, string username)
         {
             var status = new Status();
-            
+
             var user = await userManager.FindByNameAsync(username);
             if (user == null)
             {

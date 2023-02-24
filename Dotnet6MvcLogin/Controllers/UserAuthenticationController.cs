@@ -1,7 +1,7 @@
-﻿using SistemaBiblioteca.Models.DTO;
-using SistemaBiblioteca.Services;
+﻿using SistemaBiblioteca.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SistemaBiblioteca.Models.Auth;
 
 namespace SistemaBiblioteca.Controllers
 {
